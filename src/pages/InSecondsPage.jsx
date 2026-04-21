@@ -434,6 +434,7 @@ export default function InSecondsPage() {
   const [showLoading, setShowLoading] = useState(true)
   const [loadProgress, setLoadProgress] = useState(0)
   const audioRef = useRef(null)
+  const videoRef = useRef(null)
 
   /* Set splash cursor to red for InSeconds experience */
   useEffect(() => {
@@ -474,15 +475,23 @@ export default function InSecondsPage() {
     return () => cancelAnimationFrame(raf)
   }, [])
 
-  // Auto-play music and sync state after loading finishes
+  // Auto-play music and video after loading finishes
   useEffect(() => {
-    if (!showLoading && audioRef.current) {
-      audioRef.current.play()
-        .then(() => setIsPlaying(true))
-        .catch(e => {
-          console.error("Autoplay blocked:", e)
-          setIsPlaying(false)
+    if (!showLoading) {
+      if (audioRef.current) {
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(e => {
+            console.error("Audio autoplay blocked:", e)
+            setIsPlaying(false)
+          })
+      }
+      if (videoRef.current) {
+        videoRef.current.muted = true
+        videoRef.current.play().catch(e => {
+          console.error("Video autoplay blocked:", e)
         })
+      }
     }
   }, [showLoading])
 
@@ -788,10 +797,12 @@ export default function InSecondsPage() {
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden' }}>
         {/* Video BG */}
         <video
+          ref={videoRef}
           autoPlay muted loop playsInline
           style={{
             position: 'absolute', inset: 0, width: '100%', height: '100%',
             objectFit: 'cover', opacity: 1, zIndex: 0,
+            pointerEvents: 'none',
           }}
         >
           <source src={VIDEO_URL} type="video/mp4" />

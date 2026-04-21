@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { ArrowRight, ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -20,6 +20,18 @@ const navItems = [
 
 export default function Hero({ onTransform }) {
   const [isSequenceDone, setIsSequenceDone] = useState(false)
+  const videoRef = useRef(null)
+
+  // Force autoplay on mobile
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true
+      videoRef.current.play().catch(() => {
+        // Fallback for extremely strict browsers
+        console.log("Autoplay blocked, waiting for user interaction")
+      })
+    }
+  }, [])
 
   return (
     <section id="home" className="h-screen w-full p-4 md:p-6 bg-black relative">
@@ -43,11 +55,12 @@ export default function Hero({ onTransform }) {
       <div className="relative w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden bg-black">
         {/* ── Video background ── */}
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         >
           <source src={HERO_VIDEO} type="video/mp4" />
         </video>

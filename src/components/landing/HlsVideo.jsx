@@ -41,7 +41,7 @@ export default function HlsVideo({ src, className = '', style = {} }) {
       muted
       playsInline
       preload="metadata"
-      className={className}
+      className={`${className} pointer-events-none`}
       style={style}
     />
   )
