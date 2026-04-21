@@ -1110,8 +1110,20 @@ export function InSecondsSlide({ active, isMobile }) {
         </button>
       </div>
 
-      {!isMobile && (
-        <div className="br-img-col">
+      <div className="br-img-col">
+        {isMobile ? (
+          <img 
+            src="icon128.png" 
+            alt="InSeconds Icon" 
+            style={{ 
+              width: isMobile ? "120px" : "140px", 
+              height: "auto", 
+              objectFit: "contain",
+              filter: "drop-shadow(0 20px 50px rgba(238,63,44,0.4))",
+              animation: "float 6s ease-in-out infinite"
+            }}
+          />
+        ) : (
           <div
             className="br-img-glow"
             style={{
@@ -1119,6 +1131,8 @@ export function InSecondsSlide({ active, isMobile }) {
                 "radial-gradient(circle, rgba(238,63,44,0.45), transparent)",
             }}
           />
+        )}
+        {!isMobile && (
           <div style={{
             position: "relative",
             width: "100%",
