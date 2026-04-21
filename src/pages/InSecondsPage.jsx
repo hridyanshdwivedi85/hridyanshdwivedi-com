@@ -898,7 +898,7 @@ export default function InSecondsPage() {
               fontSize: isMobile ? '0.75rem' : '0.85rem',
               color: '#fff', letterSpacing: '0.15em', textTransform: 'uppercase',
             }}>
-              DATA_THROUGHPUT: <span style={{ color: RED }}>0 → 3,000 / SEC</span>
+              INSECONDS_ENGINE: <span style={{ color: RED }}>0 → 3,000 EMAILS</span>
             </span>
           </motion.div>
 
