@@ -1270,6 +1270,21 @@ export function AgencySlide({ active, isMobile }) {
           <br/><br/>
           <strong style={{ color: "#fff", fontWeight: 600 }}>We don't make it pretty. We build weapons.</strong>
         </p>
+
+        {/* Pricing Row */}
+        <div 
+          className="br-price-row"
+          style={{ 
+            background: "rgba(255,255,255,0.06)", 
+            borderColor: "rgba(255,255,255,0.15)",
+            marginTop: "1.5rem",
+            marginBottom: "0.5rem"
+          }}
+        >
+          <span className="br-price-from">STARTING</span>
+          <span className="br-price-amount">$8/hr</span>
+          <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.6rem", fontFamily: "monospace", marginLeft: "10px", letterSpacing: "1px" }}>// LET'S TALK BUSINESS</span>
+        </div>
         
         <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>
           <a href="mailto:mannathridyanshdwivedi85@gmail.com" style={{

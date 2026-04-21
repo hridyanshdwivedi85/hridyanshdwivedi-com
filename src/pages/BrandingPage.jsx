@@ -50,7 +50,7 @@ const slides = [
   { name: 'NVIDIA',      tagline: 'Beyond Real-Time.',      year: '1993', category: 'Technology',     Component: NvidiaSlide,  accent: '#76B900', bg: '#050a02' },
   { name: 'GTA VI',      tagline: 'Return to Vice City.',   year: '2025', category: 'Entertainment',  Component: GTA6Slide,    accent: '#f59e0b', bg: '#08040e' },
   { name: 'InSeconds',   tagline: 'Automated Cold-Email.',  year: '2026', category: 'Software',       Component: InSecondsSlide,accent: '#EE3F2C', bg: '#0d0403' },
-  { name: 'Creative Agency', tagline: "Let's Talk Business.", year: '2026', category: 'CEO', Component: AgencySlide, accent: '#ffffff', bg: '#050505' },
+  { name: 'Creative Agency', tagline: "Let's Talk Business. Starting at $8/hr", year: '2026', category: 'CEO', Component: AgencySlide, accent: '#ffffff', bg: '#050505' },
 ]
 
 const slideVariants = {
