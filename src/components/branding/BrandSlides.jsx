@@ -702,7 +702,7 @@ export function BMWSlide({ active, isMobile }) {
         </div>
       </div>
 
-      <div className="br-img-col" style={{ alignItems: "flex-end", paddingBottom: "3%" }}>
+      <div className="br-img-col" style={{ alignItems: isMobile ? "center" : "center", paddingBottom: "3%" }}>
         <div
           className="br-img-glow"
           style={{
