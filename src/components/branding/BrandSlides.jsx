@@ -1218,8 +1218,8 @@ export function InSecondsSlide({ active, isMobile }) {
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
