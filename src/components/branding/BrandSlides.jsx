@@ -1245,7 +1245,7 @@ export function AgencySlide({ active, isMobile }) {
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: "1rem" }}>
           <div style={{ padding: "4px 8px", background: "#fff", color: "#000", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 900, borderRadius: "4px", fontSize: "10px", letterSpacing: "1px" }}>AVAILABLE</div>
           <div className="br-kicker" style={{ color: "#a1a1aa", margin: 0, paddingBottom: 0 }}>
-            Hridyansh Dwivedi · Digital Architect
+            Hridyansh Dwivedi · CEO
           </div>
         </div>
         <h2 className="br-headline" style={{ fontSize: "clamp(2.2rem, 5vw, 5.5rem)", lineHeight: 0.9 }}>
