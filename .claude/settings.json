@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const{execSync}=require('child_process');try{const out=execSync('git status --porcelain src public',{encoding:'utf8'});const touched=out.split(/\\r?\\n/).some(l=>l.trim()&&/\\s(src|public)\\//.test(' '+l));const ai=execSync('git diff --cached --name-only CLAUDE.md 2>NUL || echo',{encoding:'utf8'}).trim();if(touched){process.stderr.write('[CLAUDE.md reminder] Source files under src/ or public/ changed this session — reopen CLAUDE.md and reconcile the directory map, routes and key patterns before ending.\\n');}}catch(e){}\""
+          }
+        ]
+      }
+    ]
+  }
+}

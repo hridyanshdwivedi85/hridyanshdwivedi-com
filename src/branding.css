@@ -1,0 +1,381 @@
+/* ═══════════════════════════════════════════════════════════
+   BRANDING PAGE — Premium Ad Slide Design System
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Keyframes ── */
+@keyframes br-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes br-float-fast {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-9px); }
+}
+@keyframes br-pulse-scale {
+  0%, 100% { transform: scale(0.94); opacity: 0.4; }
+  50%       { transform: scale(1.06); opacity: 0.15; }
+}
+@keyframes discSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes discGlowPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* ── Animation helpers ── */
+.float-vertical { animation: br-float 4s ease-in-out infinite; will-change: transform; transform: translateZ(0); }
+.float-fast     { animation: br-float-fast 2.8s ease-in-out infinite; will-change: transform; transform: translateZ(0); }
+.br-disc-spin   { animation: discSpin 10s linear infinite; will-change: transform; transform: translateZ(0); }
+.br-glow-pulse  { animation: discGlowPulse 3s ease-in-out infinite; will-change: opacity; }
+
+/* ══════════════════════════════════════════════
+   SLIDE GRID LAYOUT
+   ══════════════════════════════════════════════ */
+.br-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: 'txt img';
+  align-items: center;
+  padding: 0 6% 0 7%;
+  gap: 4%;
+  overflow: hidden;
+}
+
+/* Flip: image on left, text on right */
+.br-slide.br-flip {
+  grid-template-areas: 'img txt';
+}
+
+/* Explicit area placement */
+.br-text-col { grid-area: txt; }
+.br-img-col  { grid-area: img; }
+
+/* Mobile: single column, image always on top */
+@media (max-width: 767px) {
+  .br-slide,
+  .br-slide.br-flip {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: 'img' 'txt';
+    padding: 6% 6% 4%;
+    gap: 1rem;
+    align-content: center;
+  }
+  .br-img-col {
+    min-height: 42vw;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 8px 0;
+  }
+  .br-subline { max-width: 100%; }
+}
+
+/* ══════════════════════════════════════════════
+   COLUMNS
+   ══════════════════════════════════════════════ */
+.br-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 10;
+  position: relative;
+  min-width: 0;
+  overflow: visible;
+}
+
+.br-img-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 10;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════════════
+   TYPOGRAPHY
+   ══════════════════════════════════════════════ */
+.br-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.52rem, 0.75vw, 0.63rem);
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.br-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 5.8vw, 6.2rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.87;
+  color: #fff;
+}
+.br-headline.light { color: #0a0a0a; }
+
+.br-subline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.57rem, 0.85vw, 0.7rem);
+  line-height: 1.7;
+  padding: 10px 14px 10px 16px;
+  border-left: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0 6px 6px 0;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 36ch;
+}
+.br-subline.light {
+  border-left-color: rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* ── Price pill ── */
+.br-price-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 7px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 999px;
+  width: fit-content;
+}
+.br-price-row.light {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.br-price-from {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.br-price-amount {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.br-price-amount.light { color: #111; }
+
+/* ══════════════════════════════════════════════
+   DECORATIVE ELEMENTS
+   ══════════════════════════════════════════════ */
+.br-corner-tl {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 52px;
+  height: 52px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  pointer-events: none;
+  z-index: 5;
+}
+.br-corner-br {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 52px;
+  height: 52px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.br-img-glow {
+  position: absolute;
+  inset: -25%;
+  border-radius: 50%;
+  filter: blur(75px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.br-ring {
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  animation: br-pulse-scale 3.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Background watermark text */
+.br-bg-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.br-bg-text span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: 16vw;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+}
+
+/* ══════════════════════════════════════════════
+   PRODUCT IMAGES
+   ══════════════════════════════════════════════ */
+.br-product {
+  max-width: 88%;
+  max-height: 84%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+.br-product.tall {
+  max-width: 60%;
+  max-height: 90%;
+}
+.br-product.wide {
+  max-width: 98%;
+  max-height: 70%;
+}
+
+/* ══════════════════════════════════════════════
+   BRAND-SPECIFIC EXTRAS
+   ══════════════════════════════════════════════ */
+
+/* Coke italic brand wordmark */
+.br-coke-wordmark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.6rem);
+  font-weight: 900;
+  font-style: italic;
+  background: linear-gradient(135deg, #ff5555, #cc0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+/* BMW badge row */
+.br-bmw-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Nvidia / GPU spec list */
+.br-spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.br-spec-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.57rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.br-spec-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* GTA disc */
+.br-disc-wrap {
+  position: relative;
+  width: clamp(180px, 28vw, 340px);
+  height: clamp(180px, 28vw, 340px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .br-disc-wrap {
+    width: min(160px, 40vw);
+    height: min(160px, 40vw);
+    max-height: 180px;
+    max-width: 180px;
+  }
+}
+.br-disc-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: discSpin 10s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  position: relative;
+  z-index: 2;
+}
+.br-disc-glow {
+  position: absolute;
+  inset: -15%;
+  border-radius: 50%;
+  animation: discGlowPulse 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* GTA neon bars */
+.br-neon-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #FF6E1E, #FF3E8A, #FF6E1E, transparent);
+  z-index: 60;
+  pointer-events: none;
+}
+.br-neon-bar.top { top: 0; }
+.br-neon-bar.bottom { bottom: 0; }
+
+/* GTA stats row */
+.br-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.br-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.br-stat-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+.br-stat-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.44rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+}

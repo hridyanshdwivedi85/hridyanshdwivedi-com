@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -L -o scene_1.jpg \"https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=3840&q=90\")",
+      "Bash(curl -L -o scene_2.jpg \"https://images.unsplash.com/photo-1519681393784-d120267933ba?w=3840&q=90\")",
+      "Bash(curl -L -o scene_3.jpg \"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=3840&q=90\")",
+      "Bash(curl -L -o scene_4.jpg \"https://images.unsplash.com/photo-1534996858221-380b92700493?w=3840&q=90\")",
+      "Bash(curl -L -o scene_5.jpg \"https://images.unsplash.com/photo-1464802686167-b939a6910659?w=3840&q=90\")",
+      "WebFetch(domain:reactnewweb.vercel.app)",
+      "Bash(done)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ls -la /c/Git-Hub/reactnewweb/*.config.* /c/Git-Hub/reactnewweb/vite* /c/Git-Hub/reactnewweb/.*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir -p src/assets)",
+      "Bash(curl -L -o src/assets/feature-1.gif \"https://motionsites.ai/assets/hero-finlytic-preview-CV9g0FHP.gif\")",
+      "Bash(curl -L -o src/assets/feature-2.gif \"https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif\")",
+      "Read(//tmp/**)",
+      "Bash(node --experimental-vm-modules node_modules/.bin/vite build)",
+      "Bash(npx vite:*)",
+      "Bash(npm run:*)",
+      "Bash(xargs wc:*)",
+      "Bash(wc -l /c/Git-Hub/reactnewweb/src/pages/*.jsx /c/Git-Hub/reactnewweb/src/components/landing/Hero.jsx /c/Git-Hub/reactnewweb/src/components/landing/Navbar.jsx /c/Git-Hub/reactnewweb/src/main.jsx)",
+      "Bash(grep -v \"^\\\\.\\\\.$\")",
+      "Bash(node -e \"const ts = require\\('./node_modules/three-stdlib/index.cjs'\\); console.log\\('EffectComposer:', typeof ts.EffectComposer, 'UnrealBloomPass:', typeof ts.UnrealBloomPass, 'RenderPass:', typeof ts.RenderPass\\)\")",
+      "mcp__code-review-graph__get_architecture_overview_tool",
+      "mcp__code-review-graph__list_communities_tool",
+      "Bash(node_modules/.bin/vite build *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(curl -s http://localhost:5173/branding)"
+    ]
+  }
+}

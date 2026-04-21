@@ -1,0 +1,75 @@
+.card-swap-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(5%, 20%);
+  transform-origin: bottom right;
+  perspective: 900px;
+  overflow: visible;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0a0a0a;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.6),
+    0 18px 30px -15px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='light'] .card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.25),
+    0 18px 30px -15px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .card-swap-container {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    transform: none;
+    transform-origin: center center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .card-swap-container {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    transform: scale(0.82);
+    transform-origin: center center;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-swap-container {
+    transform: scale(0.65);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 380px) {
+  .card-swap-container {
+    transform: scale(0.55);
+    transform-origin: center center;
+  }
+}
