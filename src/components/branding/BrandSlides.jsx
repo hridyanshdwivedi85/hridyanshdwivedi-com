@@ -1313,13 +1313,14 @@ export function AgencySlide({ active, isMobile }) {
         <div style={{
           background: "rgba(20, 20, 25, 0.6)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
           border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px",
-          padding: isMobile ? "20px" : "32px", width: "100%", maxWidth: "420px",
+          padding: isMobile ? "16px" : "32px", width: isMobile ? "94%" : "100%", maxWidth: "420px",
           boxShadow: "0 24px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
           display: "flex", flexDirection: "column", gap: isMobile ? "16px" : "24px",
-          transform: isMobile ? "none" : "rotate(1deg)"
+          transform: isMobile ? "none" : "rotate(1deg)",
+          margin: isMobile ? "0 auto" : "0"
         }}>
           <div>
-            <div style={{ fontSize: "12px", fontFamily: "monospace", letterSpacing: "2px", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: isMobile ? "12px" : "20px" }}>Services Arsenal</div>
+            <div style={{ fontSize: isMobile ? "10px" : "12px", fontFamily: "monospace", letterSpacing: "2px", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: isMobile ? "12px" : "20px" }}>Services Arsenal</div>
             
             <div style={{ display: "flex", flexDirection: "column", gap: isMobile ? "12px" : "16px" }}>
               {[
@@ -1329,12 +1330,12 @@ export function AgencySlide({ active, isMobile }) {
                 { title: "Luxury UI/UX Engineering", desc: "Interfaces so smooth they should be illegal.", icon: "⚡" }
               ].map((srv, index) => (
                 <div key={srv.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start", paddingBottom: index === 3 ? "0" : (isMobile ? "12px" : "16px"), borderBottom: index === 3 ? "none" : "1px solid rgba(255,255,255,0.05)" }}>
-                  <div style={{ fontSize: "18px", display: "grid", placeItems: "center", width: "36px", height: "36px", background: "rgba(168, 85, 247, 0.1)", borderRadius: "8px", border: "1px solid rgba(168, 85, 247, 0.2)", flexShrink: 0 }}>
+                  <div style={{ fontSize: isMobile ? "16px" : "18px", display: "grid", placeItems: "center", width: isMobile ? "32px" : "36px", height: isMobile ? "32px" : "36px", background: "rgba(168, 85, 247, 0.1)", borderRadius: "8px", border: "1px solid rgba(168, 85, 247, 0.2)", flexShrink: 0 }}>
                     {srv.icon}
                   </div>
                   <div>
-                    <div style={{ color: "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: "15px", marginBottom: "4px" }}>{srv.title}</div>
-                    <div style={{ color: "#a1a1aa", fontSize: "13px", lineHeight: 1.4 }}>{srv.desc}</div>
+                    <div style={{ color: "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: isMobile ? "13.5px" : "15px", marginBottom: isMobile ? "2px" : "4px" }}>{srv.title}</div>
+                    <div style={{ color: "#a1a1aa", fontSize: isMobile ? "11.5px" : "13px", lineHeight: 1.4 }}>{srv.desc}</div>
                   </div>
                 </div>
               ))}
