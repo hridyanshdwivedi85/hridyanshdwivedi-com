@@ -1111,100 +1111,102 @@ export function InSecondsSlide({ active, isMobile }) {
         </button>
       </div>
 
-      <div className="br-img-col">
-        <div
-          className="br-img-glow"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(238,63,44,0.45), transparent)",
-          }}
-        />
-        <div style={{
-          position: "relative",
-          width: "100%",
-          maxWidth: "340px",
-          aspectRatio: "4/5",
-          background: "linear-gradient(180deg, #110808 0%, #050202 100%)",
-          border: "1px solid rgba(238,63,44,0.3)",
-          borderRadius: "16px",
-          overflow: "hidden",
-          boxShadow: "0 24px 60px rgba(0,0,0,0.6), 0 0 50px rgba(238,63,44,0.25), inset 0 1px 0 rgba(255,255,255,0.1)",
-          transform: "rotate(-2deg)",
-          transformOrigin: "bottom right"
-        }} className="br-product float-fast">
-          {/* Mac-style Window Top Bar */}
+      {!isMobile && (
+        <div className="br-img-col">
+          <div
+            className="br-img-glow"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(238,63,44,0.45), transparent)",
+            }}
+          />
           <div style={{
-            padding: "12px 16px",
-            background: "rgba(255,255,255,0.03)",
-            borderBottom: "1px solid rgba(255,255,255,0.05)",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center"
-          }}>
-            <div style={{ display: "flex", gap: "6px" }}>
-              <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f56" }} />
-              <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ffbd2e" }} />
-              <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#27c93f" }} />
-            </div>
-            <div style={{ color: "rgba(255,255,255,0.3)", fontSize: "9px", fontFamily: "monospace", letterSpacing: "1px" }}>IS-ULTRA_V5.0</div>
-          </div>
-          {/* Content Area */}
-          <div style={{ position: "relative", height: "calc(100% - 35px)", width: "100%" }}>
-            <img
-              src="/assets/images/portrait.png"
-              alt="Hridyansh Portrait in UI"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                filter: "contrast(1.05) saturate(1.1) brightness(0.9)",
-              }}
-            />
-            {/* Animated Scanning Line */}
+            position: "relative",
+            width: "100%",
+            maxWidth: "340px",
+            aspectRatio: "4/5",
+            background: "linear-gradient(180deg, #110808 0%, #050202 100%)",
+            border: "1px solid rgba(238,63,44,0.3)",
+            borderRadius: "16px",
+            overflow: "hidden",
+            boxShadow: "0 24px 60px rgba(0,0,0,0.6), 0 0 50px rgba(238,63,44,0.25), inset 0 1px 0 rgba(255,255,255,0.1)",
+            transform: "rotate(-2deg)",
+            transformOrigin: "bottom right"
+          }} className="br-product float-fast">
+            {/* Mac-style Window Top Bar */}
             <div style={{
-              position: "absolute", top: 0, left: 0, right: 0, height: "2px",
-              background: "linear-gradient(90deg, transparent, #EE3F2C, transparent)",
-              boxShadow: "0 0 10px #EE3F2C",
-              opacity: 0.7,
-            }} className="is-scan-line" />
-            <style>{`
-              @keyframes is-scan { 0% { top: 0%; opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.8; } 100% { top: 100%; opacity: 0; } }
-              .is-scan-line { animation: is-scan 4s linear infinite; }
-            `}</style>
-            
-            {/* Lower UI Floating Panel */}
-            <div style={{
-              position: "absolute", bottom: "16px", left: "16px", right: "16px",
-              background: "rgba(10,5,5,0.75)",
-              backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-              padding: "14px",
-              borderRadius: "10px",
-              border: "1px solid rgba(238,63,44,0.3)",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
-              display: "flex", flexDirection: "column", gap: "8px"
+              padding: "12px 16px",
+              background: "rgba(255,255,255,0.03)",
+              borderBottom: "1px solid rgba(255,255,255,0.05)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
             }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <div style={{
-                    width: "28px", height: "28px", background: "#EE3F2C",
-                    borderRadius: "6px", display: "grid", placeItems: "center",
-                    color: "#fff", fontSize: "11px", fontWeight: 900,
-                    boxShadow: "0 0 10px rgba(238,63,44,0.5)"
-                  }}>IS</div>
-                  <div>
-                    <div style={{ color: "#fff", fontSize: "13px", fontWeight: "bold", fontFamily: "'Space Grotesk', sans-serif" }}>System Active</div>
-                    <div style={{ color: "#fca5a5", fontSize: "9px", fontFamily: "monospace", textTransform: "uppercase" }}>Auth: Verified</div>
-                  </div>
-                </div>
-                <div style={{ color: "#EE3F2C", fontSize: "14px", fontWeight: 900, textShadow: "0 0 10px rgba(238,63,44,0.5)" }}>100%</div>
+              <div style={{ display: "flex", gap: "6px" }}>
+                <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f56" }} />
+                <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ffbd2e" }} />
+                <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#27c93f" }} />
               </div>
-              <div style={{ width: "100%", height: "4px", background: "rgba(255,255,255,0.1)", borderRadius: "2px", overflow: "hidden" }}>
-                <div style={{ width: "100%", height: "100%", background: "#EE3F2C" }} />
+              <div style={{ color: "rgba(255,255,255,0.3)", fontSize: "9px", fontFamily: "monospace", letterSpacing: "1px" }}>IS-ULTRA_V5.0</div>
+            </div>
+            {/* Content Area */}
+            <div style={{ position: "relative", height: "calc(100% - 35px)", width: "100%" }}>
+              <img
+                src="/assets/images/portrait.png"
+                alt="Hridyansh Portrait in UI"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  filter: "contrast(1.05) saturate(1.1) brightness(0.9)",
+                }}
+              />
+              {/* Animated Scanning Line */}
+              <div style={{
+                position: "absolute", top: 0, left: 0, right: 0, height: "2px",
+                background: "linear-gradient(90deg, transparent, #EE3F2C, transparent)",
+                boxShadow: "0 0 10px #EE3F2C",
+                opacity: 0.7,
+              }} className="is-scan-line" />
+              <style>{`
+                @keyframes is-scan { 0% { top: 0%; opacity: 0; } 10% { opacity: 0.8; } 90% { opacity: 0.8; } 100% { top: 100%; opacity: 0; } }
+                .is-scan-line { animation: is-scan 4s linear infinite; }
+              `}</style>
+              
+              {/* Lower UI Floating Panel */}
+              <div style={{
+                position: "absolute", bottom: "16px", left: "16px", right: "16px",
+                background: "rgba(10,5,5,0.75)",
+                backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+                padding: "14px",
+                borderRadius: "10px",
+                border: "1px solid rgba(238,63,44,0.3)",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                display: "flex", flexDirection: "column", gap: "8px"
+              }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <div style={{
+                      width: "28px", height: "28px", background: "#EE3F2C",
+                      borderRadius: "6px", display: "grid", placeItems: "center",
+                      color: "#fff", fontSize: "11px", fontWeight: 900,
+                      boxShadow: "0 0 10px rgba(238,63,44,0.5)"
+                    }}>IS</div>
+                    <div>
+                      <div style={{ color: "#fff", fontSize: "13px", fontWeight: "bold", fontFamily: "'Space Grotesk', sans-serif" }}>System Active</div>
+                      <div style={{ color: "#fca5a5", fontSize: "9px", fontFamily: "monospace", textTransform: "uppercase" }}>Auth: Verified</div>
+                    </div>
+                  </div>
+                  <div style={{ color: "#EE3F2C", fontSize: "14px", fontWeight: 900, textShadow: "0 0 10px rgba(238,63,44,0.5)" }}>100%</div>
+                </div>
+                <div style={{ width: "100%", height: "4px", background: "rgba(255,255,255,0.1)", borderRadius: "2px", overflow: "hidden" }}>
+                  <div style={{ width: "100%", height: "100%", background: "#EE3F2C" }} />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
@@ -1214,7 +1216,17 @@ export function InSecondsSlide({ active, isMobile }) {
    ═══════════════════════════════════════════════════════════ */
 export function AgencySlide({ active, isMobile }) {
   return (
-    <div className="br-slide" style={{ overflow: "hidden" }}>
+    <div className="br-slide" style={{ 
+      overflowY: isMobile ? "auto" : "hidden",
+      height: "100%",
+      display: isMobile ? "flex" : "grid",
+      flexDirection: isMobile ? "column" : undefined,
+      gap: isMobile ? "2rem" : undefined,
+      paddingTop: isMobile ? "80px" : "0",
+      paddingBottom: isMobile ? "100px" : "0",
+      scrollbarWidth: 'none',
+      msOverflowStyle: 'none'
+    }}>
       {/* Premium animated background */}
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, zIndex: 0, overflow: "hidden", pointerEvents: 'none' }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 80% 20%, rgba(67, 56, 202, 0.25), transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(236, 72, 153, 0.25), transparent 50%)", animation: "is-pulse-glow 8s infinite alternate" }} />
@@ -1229,14 +1241,14 @@ export function AgencySlide({ active, isMobile }) {
         </span>
       </div>
 
-      <div className="br-text-col" style={{ zIndex: 2 }}>
+      <div className="br-text-col" style={{ zIndex: 2, flexShrink: 0 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: "1rem" }}>
           <div style={{ padding: "4px 8px", background: "#fff", color: "#000", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 900, borderRadius: "4px", fontSize: "10px", letterSpacing: "1px" }}>AVAILABLE</div>
           <div className="br-kicker" style={{ color: "#a1a1aa", margin: 0, paddingBottom: 0 }}>
             Hridyansh Dwivedi · Digital Architect
           </div>
         </div>
-        <h2 className="br-headline" style={{ fontSize: "clamp(3rem, 5vw, 5.5rem)", lineHeight: 0.9 }}>
+        <h2 className="br-headline" style={{ fontSize: "clamp(2.2rem, 5vw, 5.5rem)", lineHeight: 0.9 }}>
           Digital Mediocrity<br/>
           <span style={{ color: "#a855f7", fontStyle: "italic", fontFamily: "'Instrument Serif', serif" }}>is a choice.</span>
         </h2>
@@ -1248,7 +1260,7 @@ export function AgencySlide({ active, isMobile }) {
             color: "#e4e4e7",
             background: "rgba(168, 85, 247, 0.05)",
             maxWidth: "500px",
-            fontSize: "15px",
+            fontSize: isMobile ? "14px" : "15px",
             lineHeight: 1.6,
             backdropFilter: "blur(4px)",
             WebkitBackdropFilter: "blur(4px)"
@@ -1296,27 +1308,27 @@ export function AgencySlide({ active, isMobile }) {
         </div>
       </div>
 
-      <div className="br-img-col" style={{ zIndex: 2 }}>
+      <div className="br-img-col" style={{ zIndex: 2, flexShrink: 0 }}>
         {/* Services Glass Panel */}
         <div style={{
           background: "rgba(20, 20, 25, 0.6)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
           border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px",
-          padding: "32px", width: "100%", maxWidth: "420px",
+          padding: isMobile ? "20px" : "32px", width: "100%", maxWidth: "420px",
           boxShadow: "0 24px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
-          display: "flex", flexDirection: "column", gap: "24px",
-          transform: "rotate(1deg)"
+          display: "flex", flexDirection: "column", gap: isMobile ? "16px" : "24px",
+          transform: isMobile ? "none" : "rotate(1deg)"
         }}>
           <div>
-            <div style={{ fontSize: "12px", fontFamily: "monospace", letterSpacing: "2px", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: "20px" }}>Services Arsenal</div>
+            <div style={{ fontSize: "12px", fontFamily: "monospace", letterSpacing: "2px", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: isMobile ? "12px" : "20px" }}>Services Arsenal</div>
             
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: isMobile ? "12px" : "16px" }}>
               {[
                 { title: "Architectural Web Design", desc: "For those who realize template sites are business suicide.", icon: "💎" },
-                { title: "Psychological Ad Creatives", desc: "High-ROI assets designed to manipulate... I mean, influence.", icon: "🧠" },
-                { title: "E-Commerce Dominance", desc: "Showcases that make your products look like they belong in a museum.", icon: "🏛️" },
+                { title: "Psychological Ad Creatives", desc: "High-ROI assets designed to influence.", icon: "🧠" },
+                { title: "E-Commerce Dominance", desc: "Showcases that make your products look like museum pieces.", icon: "🏛️" },
                 { title: "Luxury UI/UX Engineering", desc: "Interfaces so smooth they should be illegal.", icon: "⚡" }
               ].map((srv, index) => (
-                <div key={srv.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start", paddingBottom: index === 3 ? "0" : "16px", borderBottom: index === 3 ? "none" : "1px solid rgba(255,255,255,0.05)" }}>
+                <div key={srv.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start", paddingBottom: index === 3 ? "0" : (isMobile ? "12px" : "16px"), borderBottom: index === 3 ? "none" : "1px solid rgba(255,255,255,0.05)" }}>
                   <div style={{ fontSize: "18px", display: "grid", placeItems: "center", width: "36px", height: "36px", background: "rgba(168, 85, 247, 0.1)", borderRadius: "8px", border: "1px solid rgba(168, 85, 247, 0.2)", flexShrink: 0 }}>
                     {srv.icon}
                   </div>
