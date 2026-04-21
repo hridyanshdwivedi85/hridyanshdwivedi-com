@@ -83,7 +83,6 @@ export function NikeSlide({ active, isMobile }) {
               height: "900px",
               transformOrigin: "top left",
               transform: `scale(${scale})`,
-              pointerEvents: "none",
             }}
           >
             <UnicornScene
@@ -1217,7 +1216,7 @@ export function InSecondsSlide({ active, isMobile }) {
 export function AgencySlide({ active, isMobile }) {
   return (
     <div className="br-slide" style={{ 
-      overflowY: isMobile ? "auto" : "hidden",
+      overflowY: "auto",
       height: "100%",
       display: isMobile ? "flex" : "grid",
       flexDirection: isMobile ? "column" : undefined,
@@ -1277,8 +1276,8 @@ export function AgencySlide({ active, isMobile }) {
           style={{ 
             background: "rgba(255,255,255,0.06)", 
             borderColor: "rgba(255,255,255,0.15)",
-            marginTop: "1.5rem",
-            marginBottom: "0.5rem"
+            marginTop: isMobile ? "1.5rem" : "0.75rem",
+            marginBottom: isMobile ? "0.5rem" : "0.25rem"
           }}
         >
           <span className="br-price-from">STARTING</span>
@@ -1286,7 +1285,7 @@ export function AgencySlide({ active, isMobile }) {
           <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.6rem", fontFamily: "monospace", marginLeft: "10px", letterSpacing: "1px" }}>// LET'S TALK BUSINESS</span>
         </div>
         
-        <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: 12, marginTop: isMobile ? 32 : 16, flexWrap: "wrap" }}>
           <a href="mailto:mannathridyanshdwivedi85@gmail.com" style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             padding: "12px 24px", background: "#fff", color: "#000",
