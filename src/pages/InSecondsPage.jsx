@@ -937,7 +937,7 @@ export default function InSecondsPage() {
             transition={{ duration: 0.7, delay: 0.28 }}
             style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}
           >
-            <ClipBtn href="/InSeconds%20Chrome%20Extension%20(20%20April).zip" download variant="red">
+            <ClipBtn href="/InSeconds%20V5.0.3.zip" download variant="red">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
               </svg>
@@ -1232,7 +1232,7 @@ export default function InSecondsPage() {
               {/* CTA buttons */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <ClipBtn
-                  href="/InSeconds%20Chrome%20Extension%20(20%20April).zip"
+                  href="/InSeconds%20V5.0.3.zip"
                   download
                   variant="red"
                   style={{ width: '100%', justifyContent: 'center', padding: '15px 26px' }}
@@ -1463,7 +1463,7 @@ export default function InSecondsPage() {
               No server, no API keys. WhatsApp to activate in minutes.
             </p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-              <ClipBtn href="/InSeconds%20Chrome%20Extension%20(20%20April).zip" download variant="red">
+              <ClipBtn href="/InSeconds%20V5.0.3.zip" download variant="red">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
                 </svg>
